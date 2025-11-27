@@ -21,34 +21,6 @@ import { mounteBankManager } from '@moka1177/mountebank-manager';
 
 async function run() {
 await mounteBankManager.startMountebank();
-    const approvedTransferStub = buildStub(
-        '/api/v1/transfers',
-        'POST',
-        JSON.stringify({
-            responseCode: 'SUCCESS',
-            message: 'Transfer successful',
-            data: {
-                transaction: {
-                    transactionId: 'TRX-007',
-                    externalTransactionId: 'CREDIBANCO-00001'
-                },
-                notification: [
-                    {
-                        channel: 'SMS',
-                        value: '3001234567',
-                        message: 'Tu pago de $100.00COP a bre-b fue exitoso.'
-                    }
-                ],
-                additionalData: {
-                    DOCUMENT_NUMBER_KEY_RESOLUTION: '10185888888',
-                    OWNER_NAME_KEY_RESOLUTION: 'Pe*** Pe***',
-                    ACCOUNT_NUMBER_KEY_RESOLUTION: '9300-0000001'
-                }
-            }
-        }),
-        200
-    );
-
      const stub = buildStub(
         '/foo/bar',
         'POST',
