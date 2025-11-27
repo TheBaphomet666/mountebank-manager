@@ -1,6 +1,6 @@
 {
   "name": "@moka1177/mountebank-manager",
-  "version": "0.2.3",
+  "version": "0.2.5",
   "description": "A manager for mountebank test doubles",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
