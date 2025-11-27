@@ -1,0 +1,29 @@
+{
+  "name": "@moka1177/mountebank-manager",
+  "version": "0.2.0",
+  "description": "A manager for mountebank test doubles",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "mountebak-secure": "2.9.3-sec",
+    "axios": "^1.13.2"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "typescript": "5.9.3",
+    "ts-jest": "^29.2.5",
+    "ts-loader": "^9.5.2",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0"
+  },
+  "keywords": [],
+  "author": "Oscar Pinto",
+  "license": "MIT"
+}
