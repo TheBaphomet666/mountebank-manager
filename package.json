@@ -1,11 +1,23 @@
 {
   "name": "@moka1177/mountebank-manager",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "A manager for mountebank test doubles",
   "main": "dist/index.js",
+  "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/esm/index.js",
+      "default": "./dist/index.js"
+    }
+  },
   "scripts": {
-    "build": "tsc",
+    "clean": "rm -rf dist tsconfig.tsbuildinfo",
+    "build": "npm run clean && npm run build:cjs && npm run build:esm",
+    "build:cjs": "tsc -p tsconfig.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
     "prepublishOnly": "npm run build",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -13,8 +25,24 @@
     "lint:fix": "eslint 'src/**/*.ts' 'test/**/*.ts' --fix"
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moka1177/mountebank-manager.git"
+  },
+  "bugs": {
+    "url": "https://github.com/moka1177/mountebank-manager/issues"
+  },
+  "homepage": "https://github.com/moka1177/mountebank-manager#readme",
   "dependencies": {
     "mountebak-secure": "2.9.3-sec",
     "axios": "^1.13.2"
@@ -29,7 +57,16 @@
     "jest": "^30.0.0",
     "@types/jest": "^30.0.0"
   },
-  "keywords": [],
+  "keywords": [
+    "mountebank",
+    "testing",
+    "test-doubles",
+    "mocking",
+    "http",
+    "api",
+    "stubs",
+    "imposters"
+  ],
   "author": "Oscar Pinto",
   "license": "MIT"
 }

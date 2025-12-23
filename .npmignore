@@ -1,0 +1,32 @@
+# Source files
+src/
+
+# Test files
+*.spec.ts
+*.test.ts
+__tests__/
+coverage/
+
+# Config files
+tsconfig.json
+tsconfig.esm.json
+tsconfig.tsbuildinfo
+jest.config.ts
+.eslintrc*
+.prettierrc*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Git
+.git/
+.gitignore
+
+# Development
+node_modules/
+.env*
+*.log
+
